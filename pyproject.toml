@@ -15,5 +15,7 @@ dependencies = [
     "timescaledb",
     "requests",
     "python-decouple",
-    "psycopg[binary]"
+    "psycopg[binary]",
+    "loguru>=0.7.3",
+    "black>=25.1.0",
 ]
