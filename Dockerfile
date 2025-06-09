@@ -25,8 +25,11 @@ WORKDIR /code
 # Copy the application into the container.
 COPY . /code
 
+# Make the startup script executable
+RUN chmod +x /code/start.sh
+
 # Install the application dependencies.
 RUN uv sync --frozen --no-cache
 
 # Run the application.
-CMD ["/.venv/bin/uvicorn", "src.main:app", "--port", "80", "--host", "0.0.0.0"]
+CMD ["/code/start.sh"]
